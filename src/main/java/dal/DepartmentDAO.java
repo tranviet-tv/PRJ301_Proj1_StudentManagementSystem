@@ -6,7 +6,7 @@ import jakarta.persistence.EntityTransaction;
 import java.util.List;
 
 public class DepartmentDAO {
-    private EntityManager em;
+    private final EntityManager em;
 
     public DepartmentDAO(EntityManager em) {
         this.em = em;

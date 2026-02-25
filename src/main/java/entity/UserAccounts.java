@@ -34,6 +34,12 @@ public class UserAccounts implements Serializable {
     public UserAccounts(Integer id) {
         this.id = id;
     }
+    
+    public UserAccounts(String username, String password, Integer role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 
     public UserAccounts(Integer id, String username, String password, Integer role) {
         this.id = id;

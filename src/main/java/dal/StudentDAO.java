@@ -7,7 +7,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class StudentDAO {
-    private EntityManager em;
+    private final EntityManager em;
 
     public StudentDAO(EntityManager em) {
         this.em = em;
