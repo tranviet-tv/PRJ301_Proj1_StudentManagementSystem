@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Student Management Page - Staff Portal</title>
+<title>Student Management (Staff) - PRJ301 SMS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -40,14 +38,13 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
 <div class="flex h-screen overflow-hidden">
-<!-- Sidebar Navigation -->
 <aside class="w-64 bg-primary text-white flex flex-col shrink-0">
 <div class="p-6 flex items-center gap-3 border-b border-white/10">
 <div class="bg-white/20 p-2 rounded-lg">
 <span class="material-symbols-outlined text-white">school</span>
 </div>
 <div>
-<h1 class="text-sm font-bold leading-none">EduManage</h1>
+<h1 class="text-sm font-bold leading-none">PRJ301 SMS</h1>
 <p class="text-[10px] text-white/60 uppercase tracking-widest mt-1">Staff Portal</p>
 </div>
 </div>
@@ -72,9 +69,7 @@
 </a>
 </div>
 </aside>
-<!-- Main Content Area -->
 <main class="flex-1 flex flex-col overflow-hidden">
-<!-- Header -->
 <header class="h-16 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 shrink-0">
 <div class="flex items-center gap-2">
 <span class="text-slate-400">Pages</span>
@@ -100,16 +95,13 @@
                     </button>
 </div>
 </header>
-<!-- Scrollable Content -->
 <div class="flex-1 overflow-y-auto p-8 space-y-8 bg-slate-50/50 dark:bg-background-dark/50">
-<!-- Page Title Section -->
 <div class="flex justify-between items-end">
 <div>
 <h2 class="text-3xl font-black text-primary tracking-tight">Student Management Page</h2>
 <p class="text-slate-500 mt-1">Manage institutional records, academic performance, and departmental allocations.</p>
 </div>
 </div>
-<!-- Input Form Card -->
 <section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
 <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-lg">edit_note</span>
@@ -119,19 +111,19 @@
 <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
 <div class="space-y-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Student ID</label>
-<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" placeholder="e.g. STU-2023-001" type="text"/>
+<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" name="studentId" placeholder="e.g. STU-2023-001" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Full Name</label>
-<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" placeholder="5-50 characters" type="text"/>
+<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" maxlength="50" minlength="5" name="fullName" placeholder="5-50 characters" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">GPA (0.0 - 10.0)</label>
-<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" max="10" min="0" placeholder="0.00" step="0.1" type="number"/>
+<input class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" max="10" min="0" name="gpa" placeholder="0.00" step="0.1" type="number"/>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Department</label>
-<select class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11">
+<select class="w-full bg-slate-50 border-slate-200 rounded-lg focus:ring-primary focus:border-primary text-sm h-11" name="department">
 <option value="">Select Department</option>
 <option value="cs">Computer Science</option>
 <option value="math">Mathematics</option>
@@ -155,7 +147,6 @@
 </form>
 </div>
 </section>
-<!-- Student List Table Section -->
 <section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col">
 <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
 <div class="flex items-center gap-3">
@@ -187,7 +178,6 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-<!-- Row 1 -->
 <tr class="hover:bg-slate-50/80 transition-colors group">
 <td class="px-6 py-4 text-sm font-medium text-slate-400">1</td>
 <td class="px-6 py-4 text-sm font-bold text-primary">STU-2023-045</td>
@@ -219,7 +209,6 @@
 </div>
 </td>
 </tr>
-<!-- Row 2 -->
 <tr class="hover:bg-slate-50/80 transition-colors group">
 <td class="px-6 py-4 text-sm font-medium text-slate-400">2</td>
 <td class="px-6 py-4 text-sm font-bold text-primary">STU-2023-048</td>
@@ -251,7 +240,6 @@
 </div>
 </td>
 </tr>
-<!-- Row 3 -->
 <tr class="hover:bg-slate-50/80 transition-colors group">
 <td class="px-6 py-4 text-sm font-medium text-slate-400">3</td>
 <td class="px-6 py-4 text-sm font-bold text-primary">STU-2023-051</td>
@@ -283,7 +271,6 @@
 </div>
 </td>
 </tr>
-<!-- Row 4 -->
 <tr class="hover:bg-slate-50/80 transition-colors group">
 <td class="px-6 py-4 text-sm font-medium text-slate-400">4</td>
 <td class="px-6 py-4 text-sm font-bold text-primary">STU-2023-055</td>
@@ -315,7 +302,6 @@
 </div>
 </td>
 </tr>
-<!-- Row 5 -->
 <tr class="hover:bg-slate-50/80 transition-colors group border-b-0">
 <td class="px-6 py-4 text-sm font-medium text-slate-400">5</td>
 <td class="px-6 py-4 text-sm font-bold text-primary">STU-2023-059</td>
@@ -350,7 +336,6 @@
 </tbody>
 </table>
 </div>
-<!-- Pagination -->
 <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50">
 <p class="text-xs text-slate-500 font-medium">Showing <span class="text-primary font-bold">1-5</span> of <span class="text-primary font-bold">20</span> results</p>
 <div class="flex items-center gap-1">
@@ -368,7 +353,6 @@
 </div>
 </section>
 </div>
-<!-- Footer -->
 <footer class="h-10 border-t border-slate-200 px-8 flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-widest shrink-0">
 <span>© 2023 Academic System Inc.</span>
 <span class="flex items-center gap-4">
@@ -378,4 +362,5 @@
 </footer>
 </main>
 </div>
+
 </body></html>

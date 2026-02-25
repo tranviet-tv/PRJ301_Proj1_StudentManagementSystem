@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Registration - PRJ301 SMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1366ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-3 bg-white dark:bg-[#151c2a]">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">PRJ301 SMS</h2>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Contact Support</span>
+</button>
+</header>
+<main class="flex-1 flex justify-center items-center p-4 sm:p-8">
+<div class="flex w-full max-w-[1000px] overflow-hidden bg-white dark:bg-[#151c2a] rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+<div class="flex-1 p-8 sm:p-12 flex flex-col justify-center">
+<div class="mb-8">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight mb-2">Create your account</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Register for the PRJ301 Student Management System.</p>
+</div>
+<button class="flex w-full items-center justify-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 mb-6 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google G Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbJ1MjNA1JOy5hs2Z67ykMkYOrCFk6pkTEpuWxG5ffAM-ruTWbh0d4j0MZ8ECEsBo9sGLUI4nxBpPvZrZlRMR3jaK2OJLheUwtYQd1Qoohx98zMvjpravJlGfAhXKY715eUiD_1hP7s31l0rnWLusTWLxku1WRqWAPcjT4CtPAlU-VcUArkvJ1Sg_CERlAUyxdE_a7nn3_N8I-iMhFX3r7uGvXDIeMO57YtL4yA39sK-k7TgNJI5lGw_7-QVApuNceNZuYoG56TIW0"/>
+<span class="text-slate-700 dark:text-slate-200 font-medium">Sign up with Google</span>
+</button>
+<div class="relative mb-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="bg-white dark:bg-[#151c2a] px-2 text-slate-500 dark:text-slate-400">Or continue with user details</span>
+</div>
+</div>
+<form class="space-y-5">
+<label class="block">
+<span class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal mb-1 block">Full Name</span>
+<div class="relative">
+<input class="form-input block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm pl-10 py-3 placeholder:text-slate-400" placeholder="John Doe" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px]">person</span>
+</div>
+</label>
+<label class="block">
+<span class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal mb-1 block">Username</span>
+<div class="relative">
+<input class="form-input block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm pl-10 py-3 placeholder:text-slate-400" placeholder="johndoe123" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px]">badge</span>
+</div>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<label class="block">
+<span class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal mb-1 block">Password</span>
+<div class="relative">
+<input class="form-input block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm pl-10 py-3 placeholder:text-slate-400" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px]">lock</span>
+</div>
+</label>
+<label class="block">
+<span class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal mb-1 block">Role</span>
+<div class="relative">
+<select class="form-select block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm pl-10 py-3">
+<option disabled="" selected="" value="">Select Role</option>
+<option value="student">Student</option>
+<option value="lecturer">Lecturer</option>
+<option value="admin">Admin</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px]">school</span>
+</div>
+</label>
+</div>
+<div class="flex items-start mt-4">
+<div class="flex h-5 items-center">
+<input class="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-50 dark:bg-slate-900" id="terms" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-medium text-slate-700 dark:text-slate-300" for="terms">I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a></label>
+</div>
+</div>
+<button class="w-full flex justify-center items-center rounded-lg bg-primary px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors" type="button">
+                        Sign Up
+                </button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-2">Already have an account?</p>
+<a class="inline-block w-full py-2.5 rounded-lg border border-primary text-primary font-bold hover:bg-primary/5 transition-colors text-center" href="#">
+                    Log in
+                </a>
+</div>
+</div>
+<div class="hidden md:flex w-[400px] relative bg-slate-100 dark:bg-slate-800 flex-col justify-between p-8">
+<div class="absolute inset-0 z-0">
+<img alt="University campus hallway with lockers and sunlight" class="h-full w-full object-cover opacity-80 grayscale" data-alt="University campus hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGNge6KJkjExlPTnLBrgec_iPDgRRJdIIenN8A3k3yFhbv-4fiURLdeKJ6THbXNHq9G7BR2wyrr1O7DWwBdsavP07jUMS36O1ozyKLfXwz_pGEvESzCkLL-YFSJGr9dFHVrM_CrgI_-ToUsxOcB854Pop-sc0SGzUO2FlhfXiTE-jyFaDqmFERFr9t5C3f2XVuX61xRvOyB952pk0I2dl6Zrqtm-eGIfeoj1F8NgbbuUbZXCfOCzUnVUXnSF1UbdTljvWgOxMmNBaD"/>
+<div class="absolute inset-0 bg-blue-900/70 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end text-white">
+<div class="mb-6">
+<span class="inline-flex items-center gap-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white ring-1 ring-inset ring-white/30 mb-4">
+<span class="material-symbols-outlined text-[16px]">school</span> Academic Portal
+                    </span>
+<h3 class="text-2xl font-bold mb-2">Empowering Education</h3>
+<p class="text-slate-200 text-sm leading-relaxed">
+                        Join the PRJ301 Student Management System to streamline your academic journey. Manage courses, grades, and schedules in one place.
+                    </p>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-white/20">
+<div class="flex -space-x-2">
+<img alt="Student 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgxB4sBo90iqk09lbnpKewrFS8WMLAvFScZ0MCBr1CMJNvaLkwJ0kPR1cKKPN9At0VeENf7LCRy_2YHCj_9ca1BkC1HjabpGgBmkC4bPsuSB39cHXTAAN1UKSWUboyuU33biXzDmCjhLHDt9BFb1jk0myzqpJaDKre9YLQLK9eBzLKqwR5WBHm2IuQt7lx4KfYXyJ5TRtcgTlUavrIZYdAiOVSDZ4gSAe3623viA9GeoXaoxS1QJfQK3Kcq1w6K9F7gidscllIi6bw"/>
+<img alt="Student 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Portrait of a man looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-FrbVsNf_bDP61bphaZx8xzxdcTBQ3W2Ps6HYjwqMigHCC798cKze75cNyOT09xgL0fWOV6XWbc2B9AndIhUa4Uz9MpyS94T5brhAgwQ0oSq_igUQlqZ0RvBQe5qaQ1PA8JYqLcvIFSorJoAjqkoHNeZbHcR27AsmrOPc1xgOgCWECQB6yPOVOoa2lBz00C_XVftgdtUm5LhpI8-rS3BTGet3kPuGedZ0wF749XK0NDd5I9XwtUv8OELw5mh9JwgQHPrTCp4oLwXR"/>
+<div class="h-8 w-8 rounded-full ring-2 ring-white bg-slate-200 flex items-center justify-center text-slate-600 text-[10px] font-bold">+2k</div>
+</div>
+<span class="text-xs font-medium pl-2">Active students &amp; faculty</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-6 text-center text-sm text-slate-500 dark:text-slate-400 bg-transparent">
+    © 2024 PRJ301 SMS. All rights reserved.
+</footer>
+
+</body></html>
