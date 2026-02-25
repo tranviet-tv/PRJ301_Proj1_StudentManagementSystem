@@ -38,14 +38,14 @@ public class RegisterController extends HttpServlet {
         UserAccountDAO userDAO = new UserAccountDAO(em);
         if(userDAO.checkUsernameIsExist(username)){
             request.setAttribute("msg", "Username is  exist");
-            request.getRequestDispatcher("/register.jsp").forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
 
         String passwordEncryption = BCrypt.hashpw(password, BCrypt.gensalt());
         UserAccounts newUser = new UserAccounts(username, passwordEncryption, role);
         userDAO.register(newUser);
         
-        response.sendRedirect("/login.jsp");
+        response.sendRedirect("login.jsp");
     }
 
     @Override
