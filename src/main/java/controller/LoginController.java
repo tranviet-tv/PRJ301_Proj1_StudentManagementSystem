@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
+        request.getRequestDispatcher(request.getContextPath()+"/login.jsp").forward(request, response);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/");
         }else{
             request.setAttribute("msg", "Dang nhap khong thanh cong");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath()+"/login.jsp").forward(request, response);
         }
     }
 
