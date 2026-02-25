@@ -1,0 +1,9 @@
+com\mycompany\prj301_project1\JakartaRestConfiguration.class
+entity\Departments.class
+entity\Students.class
+config\AppLifecycleListener.class
+dal\DepartmentDAO.class
+dal\StudentDAO.class
+entity\UserAccounts.class
+dal\UserAccountDAO.class
+com\mycompany\prj301_project1\resources\JakartaEE11Resource.class
