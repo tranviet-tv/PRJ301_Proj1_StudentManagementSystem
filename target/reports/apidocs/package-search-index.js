@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"com.mycompany.prj301_project1"},{"l":"com.mycompany.prj301_project1.resources"},{"l":"config"},{"l":"dal"},{"l":"entity"}];updateSearchResults();

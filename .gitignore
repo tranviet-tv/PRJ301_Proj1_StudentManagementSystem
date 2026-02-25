@@ -1,0 +1,19 @@
+# Bỏ qua thư mục build của Maven
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Bỏ qua các file cấu hình cá nhân của phần mềm NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Bỏ qua file của hệ điều hành
+.DS_Store
+Thumbs.db
