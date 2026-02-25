@@ -11,6 +11,7 @@ import entity.UserAccounts;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet(name="RegisterController", urlPatterns={"/register"})
 public class RegisterController extends HttpServlet {
@@ -39,8 +40,9 @@ public class RegisterController extends HttpServlet {
             request.setAttribute("msg", "Username is  exist");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
-        
-        UserAccounts newUser = new UserAccounts(username, password, role);
+
+        String passwordEncryption = BCrypt.hashpw(password, BCrypt.gensalt());
+        UserAccounts newUser = new UserAccounts(username, passwordEncryption, role);
         userDAO.register(newUser);
         
         response.sendRedirect("/login.jsp");

@@ -26,6 +26,17 @@ public class UserAccountDAO {
         }
     }
     
+    public UserAccounts findByUsername(String username){
+        try {
+            String jpql = "SELECT u FROM UserAccounts u WHERE u.username = :username";
+            TypedQuery<UserAccounts> query = em.createQuery(jpql, UserAccounts.class);
+            query.setParameter("username", username);
+            return query.getSingleResult(); 
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+    
     public boolean checkUsernameIsExist(String username){
         try {
             String jpql = "SELECT u FROM UserAccounts u WHERE u.username = :username";

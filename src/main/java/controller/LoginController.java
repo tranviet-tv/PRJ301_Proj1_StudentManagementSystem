@@ -13,6 +13,7 @@ import jakarta.persistence.EntityManagerFactory;
 import entity.UserAccounts;
 import jakarta.persistence.Persistence;
 import jakarta.servlet.http.HttpSession;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet(name="LoginController", urlPatterns={"/login"})
 public class LoginController extends HttpServlet {
@@ -34,9 +35,9 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
 
         UserAccountDAO userDAO = new UserAccountDAO(em);
-        UserAccounts user = userDAO.findByUsernameAndPassword(username, password);
+        UserAccounts user = userDAO.findByUsername(username);
         
-        if(user != null && user.getPassword().equals(password)){
+        if(user != null && BCrypt.checkpw(password, user.getPassword())){
             HttpSession loginSession = request.getSession();
             loginSession.setAttribute("account", user);
             response.sendRedirect(request.getContextPath() + "/");
