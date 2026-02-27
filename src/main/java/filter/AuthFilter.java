@@ -33,7 +33,7 @@ public class AuthFilter implements Filter {
         String path = uri.substring(contextPath.length());
         
         //cho phep cac duong dan di qua ma kh can ktra
-        if (path.startsWith("/login") || path.startsWith("/logout") || 
+        if (path.startsWith("/login") || path.startsWith("/logout") || path.startsWith("/register")||
             path.contains(".css") || path.contains(".js") || path.contains(".jpg")) {
             chain.doFilter(request, response);
             return;

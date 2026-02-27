@@ -22,7 +22,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher(request.getContextPath()+"/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/register.jsp").forward(request, response);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class RegisterController extends HttpServlet {
         UserAccountDAO userDAO = new UserAccountDAO(em);
         if(userDAO.checkUsernameIsExist(username)){
             request.setAttribute("msg", "Username is  exist");
-            request.getRequestDispatcher(request.getContextPath()+"/register.jsp").forward(request, response);
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
 
         String passwordEncryption = BCrypt.hashpw(password, BCrypt.gensalt());

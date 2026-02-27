@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : register
     Created on : Feb 25, 2026, 11:21:56 PM
@@ -20,7 +21,10 @@
                 <option value="1">Manager</option>
                 <option value="2">Staff</option>
                 <option value="3">Guest</option>
-            </select>
+            </select> <br>
+            <c:if test="${requestScope.msg!=null}">
+                ${requestScope.msg} <br>
+            </c:if>
             <input type="submit" value="register" name="Register"/>
         </form>
         

@@ -16,7 +16,7 @@ import java.util.List;
 @WebServlet(name="DepartmentManager", urlPatterns={"/department"})
 public class DepartmentManager extends HttpServlet {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("PRJ301Proj1_PU");;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("PRJ301Proj1_PU");
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
