@@ -14,8 +14,8 @@
     </head>
     <body>
         <form action="department" method="POST">
-            ID<input type="text" name="id" value="" /><br> 
-            Department Name<input type="text" name="departmentname" value="" /> <br> 
+            ID<input type="text" name="id" value="${requestScope.departmentedit  != null ? departmentedit.getId():""}" /><br> 
+            Department Name<input type="text" name="departmentname" value="${requestScope.departmentedit  != null ? departmentedit.getDepartmentname():""}" /> <br> 
             
             <input type="submit" value="add" name="action" />
             <input type="submit" value="update" name="action" />
@@ -35,9 +35,8 @@
                 <tr>
                     <td>${dep.getId()}</td>
                     <td>${dep.getDepartmentname()}</td>
-                    <td><form name="edit" action="department">
-                        </form></td>
-                    <td></td>
+                    <td><a href="department?action=edit&id=${dep.getId()}">Edit</a></td>
+                    <td><a href="department?action=delete&id=${dep.getId()}">Edit</a></td>
                 </tr>
             </c:forEach>
             </tbody>

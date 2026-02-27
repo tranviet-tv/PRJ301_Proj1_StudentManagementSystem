@@ -24,6 +24,5 @@
             </c:if>
             <input type="submit" value="Login" name="Login" />
         </form>
-        
     </body>
 </html>

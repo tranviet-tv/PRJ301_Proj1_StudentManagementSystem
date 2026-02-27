@@ -35,8 +35,11 @@ public class DepartmentManager extends HttpServlet {
                 case "edit":
                     Integer idToEdit = Integer.parseInt(request.getParameter("id"));
                     Departments deptToEdit = departmentDAO.findById(idToEdit);
-                    request.setAttribute("department", deptToEdit);
-                    request.getRequestDispatcher("/department-form.jsp").forward(request, response);
+                    request.setAttribute("departmentedit", deptToEdit);
+                    
+                    List<Departments> listWhileEditing = departmentDAO.findAll();
+                    request.setAttribute("listDepartments", listWhileEditing);
+                    request.getRequestDispatcher("/department.jsp").forward(request, response);
                     break;
                     
                 case "delete":
