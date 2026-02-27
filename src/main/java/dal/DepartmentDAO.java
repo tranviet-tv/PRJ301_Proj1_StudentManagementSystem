@@ -14,7 +14,8 @@ public class DepartmentDAO {
 
     // Lấy tất cả phòng ban (phục vụ Dropdown và danh sách)
     public List<Departments> findAll() {
-        return em.createNamedQuery("Departments.findAll", Departments.class).getResultList();
+        String jpql = "SELECT d FROM Departments d";
+        return em.createQuery(jpql, Departments.class).getResultList();
     }
 
     // Tìm phòng ban theo ID

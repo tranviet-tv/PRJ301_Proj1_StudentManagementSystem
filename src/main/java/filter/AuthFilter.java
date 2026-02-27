@@ -44,7 +44,7 @@ public class AuthFilter implements Filter {
         UserAccounts userLogin = (session != null)? (UserAccounts) session.getAttribute("account"):  null;
         if(userLogin == null){
             req.setAttribute("msg", "You have no permission to access this function!");
-            req.getRequestDispatcher(req.getContextPath() + "/login").forward(request, response);
+            req.getRequestDispatcher("/login").forward(request, response);
         }
         
         int role = userLogin.getRole();
