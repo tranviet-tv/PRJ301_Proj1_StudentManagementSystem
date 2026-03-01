@@ -20,7 +20,7 @@ public class LogoutController extends HttpServlet {
         if(session != null){
             session.invalidate();
         }
-        request.getRequestDispatcher(request.getContextPath()+"/login").forward(request, response);
+        request.getRequestDispatcher("/login").forward(request, response);
     }
 
     @Override

@@ -18,7 +18,7 @@
     <div class="header">
         <h2>Student Management System</h2>
         <div>
-            Welcome, <b>${sessionScope.user.username}</b> (Role: ${sessionScope.user.role == 1 ? 'Manager' : 'Staff'})
+            Welcome, <b>${sessionScope.account.username}</b> (Role: ${sessionScope.account.role == 1 ? 'Manager' : 'Staff'})
             <a href="logout" style="margin-left: 15px; color: red;">Logout</a>
         </div>
     </div>
@@ -27,7 +27,7 @@
         <p class="error">${errorMessage}</p>
     </c:if>
 
-    <c:if test="${sessionScope.user.role == 2}">
+    <c:if test="${sessionScope.account.role == 2}">
         <h3>${not empty studentEdit ? 'Edit Student' : 'Add New Student'}</h3>
         <form action="student" method="post">
             <input type="hidden" name="action" value="${not empty studentEdit ? 'update' : 'add'}">
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>GPA:</td>
-                    <td><input type="number" step="0.1" name="gpa" value="${studentEdit.gpa}" required></td>
+                    <td><input type="number" step="0.05" name="gpa" value="${studentEdit.gpa}" required></td>
                 </tr>
                 <tr>
                     <td>Department:</td>
@@ -89,7 +89,7 @@
                 <th>Created By</th>
                 <th>Created At</th>
                 <th>Updated At</th>
-                <c:if test="${sessionScope.user.role == 2}">
+                <c:if test="${sessionScope.account.role == 2}">
                     <th>Actions</th>
                 </c:if>
             </tr>
@@ -97,18 +97,18 @@
         <tbody>
             <c:forEach items="${listStudents}" var="s">
                 <tr>
-                    <td>${s.id}</td>
-                    <td>${s.studentId}</td>
-                    <td>${s.name}</td>
-                    <td>${s.gpa}</td>
-                    <td>${s.department.departmentname}</td>
-                    <td>${s.createdBy}</td>
-                    <td>${s.createdAt}</td>
-                    <td>${s.updatedAt}</td>
+                    <td>${s.getId() }</td>
+                    <td>${s.getStudentid()}</td>
+                    <td>${s.getName() }</td>
+                    <td>${s.getGpa() }</td>
+                    <td>${s.getDepartmentName() }</td>
+                    <td>${s.getCreatedBy() }</td>
+                    <td>${s.getCreatedAt() }</td>
+                    <td>${s.getUpdatedAt() }</td>
                     
-                    <c:if test="${sessionScope.user.role == 2}">
+                    <c:if test="${sessionScope.account.role == 2}">
                         <td>
-                            <c:if test="${sessionScope.user.username == s.createdBy}">
+                            <c:if test="${sessionScope.account.username == s.createdBy}">
                                 <a href="student?action=edit&id=${s.id}">Edit</a> | 
                                 <a href="student?action=delete&id=${s.id}">Delete</a>
                             </c:if>
@@ -119,7 +119,7 @@
         </tbody>
     </table>
 
-    <c:if test="${sessionScope.user.role == 2 && totalPages > 1}">
+    <c:if test="${sessionScope.account.role == 2 && totalPages > 1}">
         <div class="pagination">
             <span>Page: </span>
             <c:forEach begin="1" end="${totalPages}" var="i">

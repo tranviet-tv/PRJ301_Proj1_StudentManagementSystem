@@ -11,6 +11,7 @@ import java.util.Date;
 public class Students {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
     @NotNull
@@ -101,6 +102,10 @@ public class Students {
 
     public Departments getDepartmentId() {
         return departmentId;
+    }
+    
+    public String getDepartmentName() {
+        return departmentId.getDepartmentname();
     }
 
     public void setDepartmentId(Departments departmentId) {

@@ -86,8 +86,20 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         
     } catch (Exception e) {
         e.printStackTrace();
+        //nếu gặp sai fortmat ID thì sẽ  in ra trang trang
+        // BÁO LỖI LÊN MÀN HÌNH THAY VÌ ĐỂ TRANG TRẮNG
+        request.setAttribute("errorMessage", "Lỗi hệ thống: " + e.toString());
+        // Nếu lỗi xảy ra trước khi forward, ta cố gắng hiển thị giao diện kèm câu báo lỗi
+        try {
+            request.getRequestDispatcher("/student.jsp").forward(request, response);
+        } catch (Exception ex) {
+            // Nếu lỗi do chính file JSP render sai, trả về trang lỗi 500 của server
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Lỗi render giao diện: " + e.getMessage());
+        }
     } finally {
-        em.close();
+        if (em != null && em.isOpen()) {
+            em.close();
+        }
     }
 }
 
