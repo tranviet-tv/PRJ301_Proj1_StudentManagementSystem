@@ -54,14 +54,14 @@
 </div>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-white transition-colors" href="#">Home</a>
-<a class="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-white transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-white transition-colors" href="index.jsp">Home</a>
+<a class="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-white transition-colors" href="aboutPage.jsp">About</a>
 <a class="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-white transition-colors" href="#">Support</a>
 <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
-<button class="text-sm font-semibold text-primary dark:text-slate-100 px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" onclick="window.location.href='#'">
+<button class="text-sm font-semibold text-primary dark:text-slate-100 px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" onclick="window.location.href='login'">
                     Sign In
                 </button>
-<button class="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-primary-hover shadow-md shadow-primary/20 transition-all flex items-center gap-2" onclick="window.location.href='#'">
+<button class="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-primary-hover shadow-md shadow-primary/20 transition-all flex items-center gap-2" onclick="window.location.href='register'">
                     Get Started <span class="material-symbols-outlined text-sm">login</span>
 </button>
 </nav>
@@ -90,7 +90,7 @@
                     </p>
 <div class="flex flex-col sm:flex-row gap-4">
     
-<button class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-hover hover:-translate-y-1 transition-all shadow-xl shadow-primary/25" onclick="window.location.href='#'">
+<button class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-hover hover:-translate-y-1 transition-all shadow-xl shadow-primary/25" onclick="window.location.href='login'">
                             Login to Dashboard
                             <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -152,7 +152,7 @@
 <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                         Complete lifecycle management from admission to graduation. Track attendance, grades, and personal records in a centralized database.
                     </p>
-<a class="inline-flex items-center text-primary dark:text-accent font-semibold text-sm group-hover:gap-2 transition-all" href="#">
+<a class="inline-flex items-center text-primary dark:text-accent font-semibold text-sm group-hover:gap-2 transition-all" href="student">
                         Access Module <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
 </a>
 </div>
@@ -165,7 +165,7 @@
 <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                         Empower faculty heads with tools to manage curriculum, assign lecturers, and oversee departmental resources efficiently.
                     </p>
-<a class="inline-flex items-center text-primary dark:text-accent font-semibold text-sm group-hover:gap-2 transition-all" href="#">
+<a class="inline-flex items-center text-primary dark:text-accent font-semibold text-sm group-hover:gap-2 transition-all" href="department">
                         View Structure <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
 </a>
 </div>
@@ -197,7 +197,7 @@
                         Secure, reliable, and efficient student management is just a click away. Sign in to your dashboard to get started.
                     </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg shadow-black/20 flex items-center justify-center gap-2" onclick="window.location.href='#'">
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg shadow-black/20 flex items-center justify-center gap-2" onclick="window.location.href='login'">
                             Login Now <span class="material-symbols-outlined">login</span>
 </button>
 <button class="bg-transparent border-2 border-slate-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white transition-all">
@@ -226,9 +226,9 @@
 <div>
 <h5 class="font-bold text-primary dark:text-white text-sm uppercase tracking-widest mb-6">Platform</h5>
 <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Student Portal</a></li>
-<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Faculty Dashboard</a></li>
-<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Admin Control</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="student">Student Portal</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="department">Faculty Dashboard</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="department">Admin Control</a></li>
 </ul>
 </div>
 <div>
@@ -249,7 +249,7 @@
 </div>
 </div>
 <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-xs text-slate-500 dark:text-slate-500">Â© 2024 PRJ301 Student Management System. All rights reserved.</p>
+<p class="text-xs text-slate-500 dark:text-slate-500">© 2024 PRJ301 Student Management System. All rights reserved.</p>
 <div class="flex gap-6">
 <a aria-label="Global" class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
 <a aria-label="Email" class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-xl">mail</span></a>

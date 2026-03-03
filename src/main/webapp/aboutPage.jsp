@@ -177,7 +177,7 @@
 </div>
 </div>
 <div class="text-center text-slate-400 text-sm">
-            Â© 2024 PRJ301 SMS. All rights reserved. Professional Student Management Solutions.
+            © 2024 PRJ301 SMS. All rights reserved. Professional Student Management Solutions.
         </div>
 </div>
 </footer>

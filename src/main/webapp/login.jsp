@@ -1,28 +1,100 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- 
-    Document   : login
-    Created on : Feb 25, 2026, 7:14:04 PM
-    Author     : tranv
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
-    </head>
-    <body>
-        <h1>Login Page</h1>
-        <form action="login" method="POST">
-            Username <input type="text" name="username" value="" /> <br>
-            Password <input type="password" name="password" value="" /> <br>
-            <c:if test="${not empty msg}">
-                <div> 
-                    ${msg}
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Login Page - PRJ301 SMS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f172a", 
+                        "accent": "#3b82f6",  
+                        "background-light": "#f1f5f9",
+                        "background-dark": "#020617",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header class="w-full px-6 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 backdrop-blur-sm">
+        <div class="flex items-center gap-2 text-primary dark:text-slate-100">
+            <span class="material-symbols-outlined text-3xl font-bold text-blue-700 dark:text-blue-500">school</span>
+            <h1 class="text-xl font-bold tracking-tight text-slate-800 dark:text-white">PRJ301 SMS</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium text-slate-600 hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-400 transition-colors" href="index.jsp">Home</a>
+            <a class="text-sm font-medium text-slate-600 hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-400 transition-colors" href="aboutPage.jsp">About</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="w-full max-w-md">
+            <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-800 overflow-hidden">
+                <div class="h-32 bg-primary flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent"></div>
+                    <span class="material-symbols-outlined text-white text-6xl opacity-30 select-none">account_balance</span>
                 </div>
-            </c:if>
-            <input type="submit" value="Login" name="Login" />
-        </form>
-    </body>
+                <div class="p-8">
+                    <div class="mb-8 text-center">
+                        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100">Login Page</h2>
+                        <p class="text-slate-500 dark:text-slate-400 mt-1">Sign in to your account</p>
+                    </div>
+
+                    <form action="login" class="space-y-6" method="POST">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="username">Username</label>
+                            <div class="relative flex items-center">
+                                <span class="material-symbols-outlined absolute left-3 text-slate-400">person</span>
+                                <input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400" id="username" name="username" placeholder="Enter your username" type="text" required/>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="password">Password</label>
+                            <div class="relative flex items-center">
+                                <span class="material-symbols-outlined absolute left-3 text-slate-400">lock</span>
+                                <input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400" id="password" name="password" placeholder="Enter your password" type="password" required/>
+                            </div>
+                        </div>
+
+                        <c:if test="${not empty msg}">
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3 p-3 rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 text-red-700 dark:text-red-400 text-sm font-medium">
+                                    <span class="material-symbols-outlined text-lg">error</span>
+                                    <span>${msg}</span>
+                                </div>
+                            </div>
+                        </c:if>
+
+                        <button name="Login" class="w-full py-3 px-4 bg-primary hover:bg-slate-800 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+                            <span>Login</span>
+                            <span class="material-symbols-outlined text-sm">login</span>
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex justify-center items-center text-xs text-slate-500 font-medium">
+                        <a class="hover:text-blue-600 transition-colors" href="register">Don't have an account? Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full py-6 text-center border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+        <p class="text-sm text-slate-500 dark:text-slate-400">Powered by <span class="font-semibold text-primary dark:text-slate-200">PRJ301 Management System</span> © 2026</p>
+    </footer>
+</body>
 </html>
