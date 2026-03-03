@@ -86,9 +86,10 @@ public class StudentController extends HttpServlet {
                     
                     // LUẬT KINH DOANH: Chỉ được sửa sinh viên do mình tạo
                     if (studentToEdit != null && studentToEdit.getCreatedBy().equals(currentUser.getUsername())) {
-                        request.setAttribute("student", studentToEdit);
-                        request.getRequestDispatcher("/student.jsp").forward(request, response);
-                        return;
+                        request.setAttribute("studentEdit", studentToEdit);
+//                        request.getRequestDispatcher("/student.jsp").forward(request, response);
+                        action = "list";
+//                        return;
                     } else {
                         request.setAttribute("errorMessage", "You can only edit students that you created!");
                         action = "list";
@@ -176,7 +177,7 @@ public class StudentController extends HttpServlet {
             String studentid = request.getParameter("studentid");
             String name = request.getParameter("name");
             String gpaStr = request.getParameter("gpa");
-            String departmentIdStr = request.getParameter("department_id");
+            String departmentIdStr = request.getParameter("departmentId");
 
             // VALIDATION DỮ LIỆU ĐẦU VÀO
             boolean hasError = false;

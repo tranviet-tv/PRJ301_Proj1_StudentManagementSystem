@@ -36,15 +36,15 @@
             <table>
                 <tr>
                     <td>Student ID:</td>
-                    <td><input type="text" name="studentId" value="${studentEdit.studentId}" required></td>
+                    <td><input type="text" name="studentid" value="${studentEdit.getId()}" required></td>
                 </tr>
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" name="name" value="${studentEdit.name}" required></td>
+                    <td><input type="text" name="name" value="${studentEdit.getName()}" required></td>
                 </tr>
                 <tr>
                     <td>GPA:</td>
-                    <td><input type="number" step="0.05" name="gpa" value="${studentEdit.gpa}" required></td>
+                    <td><input type="number" step="0.05" name="gpa" value="${studentEdit.getGpa()}" required></td>
                 </tr>
                 <tr>
                     <td>Department:</td>
@@ -52,7 +52,7 @@
                         <select name="departmentId" required>
                             <option value="">-- Select Department --</option>
                             <c:forEach items="${listDepartments}" var="dept">
-                                <option value="${dept.id}" ${studentEdit.department.id == dept.id ? 'selected' : ''}>
+                                <option value="${dept.id}" ${studentEdit.departmentId.id == dept.id ? 'selected' : ''}>
                                     ${dept.departmentname}
                                 </option>
                             </c:forEach>
