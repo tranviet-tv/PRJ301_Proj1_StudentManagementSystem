@@ -16,7 +16,7 @@ import org.mindrot.jbcrypt.BCrypt;
 @WebServlet(name="RegisterController", urlPatterns={"/register"})
 public class RegisterController extends HttpServlet {
     
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("PRJ301Proj1_PU");;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("PRJ301Proj1_PU");
     private EntityManager em = emf.createEntityManager();
 
     @Override

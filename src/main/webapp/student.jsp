@@ -51,7 +51,7 @@
                     <td>
                         <select name="departmentId" required>
                             <option value="">-- Select Department --</option>
-                            <c:forEach items="${departments}" var="dept">
+                            <c:forEach items="${listDepartments}" var="dept">
                                 <option value="${dept.id}" ${studentEdit.department.id == dept.id ? 'selected' : ''}>
                                     ${dept.departmentname}
                                 </option>
@@ -66,7 +66,7 @@
                                 <button type="submit">Update</button>
                                 <a href="student">Cancel</a>
                             </c:when>
-                            <c:otherwise>
+                                <c:otherwise>
                                 <button type="submit">Add</button>
                             </c:otherwise>
                         </c:choose>
