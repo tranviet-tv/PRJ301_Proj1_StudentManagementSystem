@@ -71,7 +71,7 @@ The database (`PRJ301`) is structured with JPA Object-Relational Mapping:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/PRJ301-Student-Management.git
+   git clone https://github.com/tranviet-tv/PRJ301_Proj1_StudentManagementSystem
    cd PRJ301-Student-Management
    ```
 
