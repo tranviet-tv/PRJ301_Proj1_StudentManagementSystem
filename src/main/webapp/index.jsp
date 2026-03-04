@@ -94,7 +94,7 @@
                             Login to Dashboard
                             <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<button class="flex items-center justify-center gap-2 border-2 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+<button class="flex items-center justify-center gap-2 border-2 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all" onclick="window.location.href='student'">
                             Explore Features
                         </button>
 </div>
