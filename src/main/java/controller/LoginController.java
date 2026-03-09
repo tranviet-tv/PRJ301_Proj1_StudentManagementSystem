@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/");
         }else{
             request.setAttribute("msg", "Dang nhap khong thanh cong");
-            request.getRequestDispatcher(request.getContextPath()+"/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
     }
 
