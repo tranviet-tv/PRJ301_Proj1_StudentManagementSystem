@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
         if(user != null && BCrypt.checkpw(password, user.getPassword())){
             HttpSession loginSession = request.getSession();
             loginSession.setAttribute("account", user);
-            response.sendRedirect(request.getContextPath() + "/");
+            response.sendRedirect("student");
         }else{
             request.setAttribute("msg", "Dang nhap khong thanh cong");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
