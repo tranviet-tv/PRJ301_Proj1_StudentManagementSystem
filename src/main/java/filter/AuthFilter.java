@@ -33,7 +33,7 @@ public class AuthFilter implements Filter {
         String path = uri.substring(contextPath.length());
         
         //cho phep cac duong dan di qua ma kh can ktra
-        if (path.startsWith("/login") || path.startsWith("/logout") || path.startsWith("/register")||
+        if (path.startsWith("/login") || path.startsWith("/logout") || path.startsWith("/register")|| path.startsWith("/index") ||
             path.contains(".css") || path.contains(".js") || path.contains(".jpg")) {
             chain.doFilter(request, response);
             return;
@@ -57,7 +57,7 @@ public class AuthFilter implements Filter {
         if (path.startsWith("/department") && role != 1) {
             req.setAttribute("errorMessage", "You have no permission to access this function!");
             // Staff không vào được phòng ban thì đẩy về lại trang quản lý sinh viên
-//            req.getRequestDispatcher("/student").forward(req, res);
+            req.getRequestDispatcher("student").forward(req, resp);
             return;
         }
 
