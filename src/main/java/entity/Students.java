@@ -16,7 +16,7 @@ public class Students {
     
     @NotNull
     @Size(min = 1, max = 20)
-    @Column(name = "studentid")
+    @Column(name = "studentid", unique = true)
     private String studentid;
     
     @NotNull
